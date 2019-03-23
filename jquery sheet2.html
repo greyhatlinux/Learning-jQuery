@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery sheet2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <style>
+            body{
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                background: #f4f4f4;
+                /* line-height: 50.5em; */
+    
+            }
+    
+            header{
+                background: #333;
+                color: #fff;
+                text-align: center;
+                /* border-bottom: 4px #000 solid; */
+                line-height: 100px;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            #container{
+                width: 90%;
+                margin: auto;
+                padding: 10px;
+            }
+        </style>
+
+
+</head>
+<body>
+    <header>
+        <h1>jQuery Crash Course</h1>
+    </header>
+    <div id="container">
+        <h1>Mouse Events</h1>
+        <button id="button1">Button 1</button>
+        <button id="button2">Button 2</button>
+
+        <hr>
+
+
+        
+        <h2 class="head1">Para 1</h2>
+                <button id="hidep1">Hide para 1</button>
+                <button id="showp1">Show para 1</button>
+                <button class="toggle">Toggle button</button>
+                <button class="db">Double Click</button>
+                <button id="hov">Hover to Hide</button>
+                <button id="hoverme">Hover to toggle</button>
+        <p class="para1">    
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem impedit a eligendi accusantium similique, asperiores perspiciatis maiores, pariatur totam consequuntur reprehenderit odit alias perferendis aperiam assumenda voluptatem? Laudantium, nostrum quisquam.
+        </p>
+
+        <hr>
+
+        <h2>Para 2</h2>
+        <button id="mousemov">Move Mouse to toggle</button>
+        <button id="mup">Mouse Up</button>
+        <button id="mdown">Mouse Down</button>
+
+        <p class="para2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ea, vero velit, nostrum facilis tempore sit nemo recusandae unde sint, deserunt labore iusto neque! Ratione saepe molestiae mollitia at voluptates?
+        </p>
+
+        <hr>
+
+        <h2>More Details with 'e'</h2>  
+        <button class="liste">list 'e'</button>
+        <button class="getclass" id="getclass">Get class of this button</button>
+        <button id="getid" class="getid">Get id of this button</button>
+        <button class="innerhtm">inner HTML</button>
+        <button class="outerhtm">outer HTML</button>
+
+        <p class="moredet">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem iure recusandae officia ut? Doloremque, quas culpa accusantium voluptates nesciunt placeat suscipit odio perferendis similique rem amet ipsam, esse ab ipsum.
+        </p>
+
+        <hr>
+
+        <h2>Mouse Coordinates</h2>
+        <p class="coords">Comment out line 206 to see the Mouse Coorinates</p>
+        
+        <hr>
+
+        <h2 align="center">Form Actions</h2>
+        <div class="container" align="center">
+            <form id="form">
+          
+              <label>Name</label>
+              <br>
+              <input type="text" id="name" placeholder="Your name " required>
+              <br><br>
+          
+              <label>Email</label>
+              <br>
+              <input type="text"  id="email" placeholder="email">
+              <br><br>
+
+              <label>Phone No.</label>
+                  <br>
+              <input type="text"  id=phone" placeholder="Phone No.">
+              <br><br>
+
+              <label>Gender</label>
+                  <br>
+                  <select id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="nosay">not to say</option>
+                  </select>
+                  <br><br>
+                  <input type="submit" value="Submit">
+                <br>
+             </form>
+             <hr>
+        </div> 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+
+
+
+
+
+
+    <script>
+            $(document).ready(function(){
+
+                    $('#button1').click(function(){
+                    alert('button 1 Clicked! and msg was displayed through 1st way');
+                    });
+
+                    $('#button2').on('click',function(){
+                    alert('button 2 Clicked! and msg was displayed through 2nd way');
+                    });
+
+                        $('#hidep1').on('click',function(){
+                            $('.para1').hide();
+                        });
+
+                        
+                        $('#showp1').on('click',function(){
+                            $('.para1').show();
+                        });
+                        $('.toggle').on('click',function(){
+                            $('.para1').toggle();
+                        });
+
+                        // $(".db").on('dbclick',function(){
+                        //     // $('.para1').toggle();
+                        //     alert("The paragraph was double-clicked");
+                        // });
+
+                        $('#hov').hover(function(){
+                            $('.para1').hide();
+                        })
+                        $('#hoverme').hover(function(){
+                            $('.para1').toggle();
+                        });
+
+
+
+                        $('#mousemov').on('mousemove',function(){
+                            $('.para2').toggle();
+                        });
+                        $('#mup').on('mouseup',function(){
+                            $('.para2').toggle();
+                        });
+                        $('#mdown').on('mousedown',function(){
+                            $('.para2').toggle();
+                        });
+
+
+                        $('.liste').on('click',function(e){
+                            console.log(e);
+                        });
+                        $('.getclass').on('click',function(e){
+                            alert(e.currentTarget.className);
+                        });
+                        $('.getid').on('click',function(e){
+                            alert(e.currentTarget.id);
+                        });
+                        $('.innerhtm').on('click',function(e){
+                            alert(e.currentTarget.innerHTML);
+                        });
+                        $('.outerhtm').on('click',function(e){
+                            alert(e.currentTarget.outerHTML);
+                        });
+
+
+                    //     $(document).on('mousemove',function(e){
+                    //         $('.coords').html('Coords: Y:'+e.clientY + '  X: '+e.clientX);
+                    //    });
+
+
+                       $('input').focus(function(){
+                        //    alert('focussed!')
+                        $(this).css('background', 'pink');
+                       });
+
+                        $('input').blur(function(){
+                        //    alert('focussed!')
+                        $(this).css('background', '#f4f4f4');
+                       });
+
+
+                       $('input').keyup(function(e){
+                           console.log(e.target.value);
+                        });
+
+                        $('select#gender').change(function(e){
+                            alert(`Gender changed to ${e.target.value}!`);
+                        });
+
+                        $('#form').submit(function(e){
+                            e.preventDefault();
+                            console.log('submitted!');
+                            var name = $('input#name').val();
+                            alert(`Dear ${name}, your form has been submitted successfully!`);
+                        });
+
+            });
+            
+        
+    </script>
+
+
+
+</body>
+</html>
