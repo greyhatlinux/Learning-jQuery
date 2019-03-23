@@ -1,6 +1,5 @@
-#Learning jQuery
-
-![jQuery logo](jquery-logo.png)
+<h1>Learning jQuery</h1>
+<img src="jquery-logo.png" align="center">
 
 What is jQuery?
 jQuery is a JavaScript library with tons of cool features delivering outstanding results to the developers out there. It is fast, concise, lightweight and very easy to use compared to the actual JavaScript.
